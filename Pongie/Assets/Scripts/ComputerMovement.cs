@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class ComputerMovement : MonoBehaviour
 {
+    public GameSettings gameSettings;
     public Rigidbody2D rigidPlayer1;
-    Vector3 speed = new Vector3(0, 25);
-    //public float speed = 10;
+    //Vector3 speed = new Vector3(0, 25);
+    
 
     private GameObject ball;
     private float ballPosition;
+    public float Speed { get { return gameSettings.StickSpeed; } }
+
     void Start()
     {
+
         ball = GameObject.FindGameObjectWithTag("Ball");
     }
 
@@ -23,8 +27,8 @@ public class ComputerMovement : MonoBehaviour
 
         if (transform.position.y != ballPosition && ball.transform.position.x>0)
         {
-            Vector2 movement = new Vector2(0,01f*ballPosition);
-            transform.Translate(0, 0.3f*ballPosition, 0);
+ 
+            transform.Translate(0, Speed*ballPosition*0.1f*Time.deltaTime, 0);
         }
         
         /* float duration = ball.transform.position.y;

@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Player1Movement : MonoBehaviour
 {
+    public GameSettings gameSettings;
     public Rigidbody2D rigidPlayer1;
-    public float speed = 50;
+    public float Speed { get { return gameSettings.StickSpeed; } }
 
     void FixedUpdate()
     {
-            float movemenetY = Input.GetAxis("Vertical1");
-            Vector2 movement = new Vector2(0, speed * movemenetY * Time.deltaTime);
+            float movementY = Input.GetAxis("Vertical1");
+            Vector2 movement = new Vector2(0, Speed * movementY * Time.deltaTime);
             transform.Translate(movement);
     }
 }

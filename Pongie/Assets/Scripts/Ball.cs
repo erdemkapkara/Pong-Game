@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-
 [RequireComponent(typeof(Rigidbody2D))]
 
 public class Ball : MonoBehaviour
@@ -41,29 +40,33 @@ public class Ball : MonoBehaviour
 
     public Button ButtonClick;
     public Button ButtonClickPlay;
-    
-    //public InputField Speedinput;
-    public GameObject Speedinput;
-    public string input;
-    public void ReadInput(string s)
-    {
-        input = s;
-        Debug.Log(input);
-    }
+
+    /*public string theSpeed  ;
+    public string theLevel;
+    public GameObject inputFieldSpeed;
+    public GameObject inputFieldLevel;
+    public Text neBu;*/
     void Start()
     {
-        /*string input1 = Speedinput.GetComponent<InputField>().ToString();
-        float velocityy = float.Parse(input1);
-        velocity = velocityy;
-        Debug.Log(velocity);*/
+        /*//inputFieldLevel = GameObject.Find("TextL");
+        //inputFieldSpeed = GameObject.Find("TextS");
+        inputFieldSpeed = GameObject.Find("CanvasStart");
 
+        neBu = inputFieldSpeed.GetComponentInChildren<Text>();
+        neBu = inputFieldSpeed.GetComponentInChildren<Text>();
+        Debug.Log(neBu);
+        //theLevel=inputFieldLevel.GetComponent<Text>().text;
+        //theSpeed=inputFieldSpeed.GetComponent<Text>().text;
+        Debug.Log(theSpeed);
+        Debug.Log(theLevel);*/
+         
         Button PlayButton = ButtonClickPlay.GetComponent<Button>();
         PlayButton.onClick.AddListener(Play);
 
         rigidBall = GetComponent<Rigidbody2D>();
-        
-        float x = Random.Range(20, -20);
-        float y = Random.Range(-20, -20);
+
+        float x = Random.Range(5, -5);
+        float y = Random.Range(5, -5);
 
         Vector2 Movement = new Vector2(x, y);
         //rigidBall.AddForce(Movement, ForceMode2D.Impulse);
@@ -71,15 +74,14 @@ public class Ball : MonoBehaviour
 
         Button btn = ButtonClick.GetComponent<Button>();
         btn.onClick.AddListener(ResetScore);
-        ReadInput(input);
-}
+    }
 
     public GameObject Players;
     public GameObject Canvases;
     public GameObject CanvasStartt;
     public void Play()
     {
-        Players.SetActive(true);        
+        Players.SetActive(true);
         Canvases.SetActive(true);
         CanvasStartt.SetActive(false);
         GetComponent<SpriteRenderer>().enabled = true;
@@ -104,5 +106,5 @@ public class Ball : MonoBehaviour
             UpdateScore(2);
         }
     }
-    
+
 }

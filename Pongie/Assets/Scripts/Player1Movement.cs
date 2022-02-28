@@ -6,8 +6,6 @@ public class Player1Movement : MonoBehaviour
 {
     public Rigidbody2D rigidPlayer1;
     public float speed = 50;
-    //public float max = 4.344f;
-    //public float min = -4.344f;
 
     void FixedUpdate()
     {

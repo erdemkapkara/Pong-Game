@@ -5,7 +5,7 @@ using UnityEngine;
 public class ComputerMovement : MonoBehaviour
 {
     public Rigidbody2D rigidPlayer1;
-    Vector3 speed = new Vector3(0, 10);
+    Vector3 speed = new Vector3(0, 25);
     //public float speed = 10;
 
     private GameObject ball;
@@ -17,14 +17,16 @@ public class ComputerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        //distance = Vector2.Distance(transform.position, ball.transform.position);
+        //transform.position = new Vector3(transform.position.y, ball.transform.position.y, speed*Time.deltaTime);
         ballPosition = ball.transform.position.y;
 
         if (transform.position.y != ballPosition && ball.transform.position.x>0)
         {
-            Vector2 movement = new Vector2(0, ballPosition);
-            transform.position = transform.position + (speed * Time.deltaTime);
-            //transform.Translate(movement*Time.deltaTime*speed);
+            Vector2 movement = new Vector2(0,01f*ballPosition);
+            transform.Translate(0, 0.3f*ballPosition, 0);
         }
+        
         /* float duration = ball.transform.position.y;
 
          if (duration < 0)
@@ -48,12 +50,5 @@ public class ComputerMovement : MonoBehaviour
          this.transform.position = Vector2.MoveTowards(this.transform.position, calculatedPosition, Time.deltaTime * stickMinSpeedToReach);
 
          */
-
-        /*
-            float movementX = Input.GetAxis("Horizontal1");
-            float movemenetY = Input.GetAxis("Vertical1");
-            Vector2 movement = new Vector2(speed * movementX * Time.deltaTime, speed * movemenetY * Time.deltaTime);
-            transform.Translate(movement);
-        */
     }
 }

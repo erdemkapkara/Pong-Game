@@ -12,35 +12,27 @@ public class Ball : MonoBehaviour
     public TextMeshProUGUI txt2;
     public TextMeshProUGUI txt3;
     public int score1 = 0, score2 = 0;
+
     public Rigidbody2D rigidBall;
     public GameSettings gameSettings;
+
     public string win = "You Won The Game!!!";
     public string lost = "You Lost The Game!!!";
+    public string empty = " ";
+
+    public Button ButtonClick;
+    public Button ButtonClickPlay;
+
+    public Vector2 direction;
+
+    public GameObject Players;
+    public GameObject Canvases;
+    public GameObject CanvasStartt;
     public float Velocity { get { return gameSettings.BallSpeed; } }
     public int NumberOfLevel { get { return gameSettings.MaxScore; } }
 
-    public void ActivePassive(bool x)
-    {
-        if (x == true)
-        {
-            GetComponent<SpriteRenderer>().enabled = x;
-            GameObject.Find("Player1").SetActive(x);
-            GameObject.Find("Player2").SetActive(x);
-            GameObject.Find("Text1").SetActive(x);
-            GameObject.Find("Text2").SetActive(x);
-        }
-        else {
-            GetComponent<SpriteRenderer>().enabled = false;
-            GameObject.Find("Player1").SetActive(false);
-            GameObject.Find("Player2").SetActive(false);
-            GameObject.Find("Text1").SetActive(false);
-            GameObject.Find("Text2").SetActive(false);
-        }
-    }
     public void FinishGame()
     {
-        ResetScore();
-        ResetPosition();
         if (score1 > score2)
         {
             txt3.text = win;
@@ -49,7 +41,8 @@ public class Ball : MonoBehaviour
         {
             txt3.text = lost;
         }
-        ActivePassive(false);
+        ResetPosition();
+        GetComponent<SpriteRenderer>().enabled = false;
     }
     public void ResetScore()
     {
@@ -58,7 +51,8 @@ public class Ball : MonoBehaviour
         transform.position = new Vector2(0, 0);
         txt1.text = score1.ToString();
         txt2.text = score2.ToString();
-        ActivePassive(true);
+        txt3.text = empty;
+        GetComponent<SpriteRenderer>().enabled = true;
     }
     public void ResetPosition()
     {
@@ -76,33 +70,24 @@ public class Ball : MonoBehaviour
         }
     }
 
-    public Button ButtonClick;
-    public Button ButtonClickPlay;
-
     void Start()
     {
         Button PlayButton = ButtonClickPlay.GetComponent<Button>();
         PlayButton.onClick.AddListener(Play);
 
         rigidBall = GetComponent<Rigidbody2D>();
-
-        float x = Random.Range(5, -5);
-        float y = Random.Range(5, -5);
-
-        Vector2 Movement = new Vector2(x, y);
-        //rigidBall.AddForce(Movement, ForceMode2D.Impulse);
-        rigidBall.velocity = new Vector2(Velocity * x, Velocity * y);
+        direction = Vector2.one.normalized;
 
         Button btn = ButtonClick.GetComponent<Button>();
         btn.onClick.AddListener(ResetScore);
     }
+    private void FixedUpdate()
+    {
+        rigidBall.velocity = direction * Velocity;
+    }
 
-    public GameObject Players;
-    public GameObject Canvases;
-    public GameObject CanvasStartt;
     public void Play()
     {
-        ActivePassive(true);
         Players.SetActive(true);
         Canvases.SetActive(true);
         CanvasStartt.SetActive(false);
@@ -112,12 +97,7 @@ public class Ball : MonoBehaviour
     }
     void Update()
     {
-        if (score1 < NumberOfLevel && score2 < NumberOfLevel)
-        {
-            txt1.text = score1.ToString();
-            txt2.text = score2.ToString();
-        }
-        else
+        if (score1 >= NumberOfLevel || score2 >= NumberOfLevel)
         {
             FinishGame();
         }
@@ -128,12 +108,25 @@ public class Ball : MonoBehaviour
         {
             ResetPosition();
             UpdateScore(1);
+            txt2.text = score2.ToString();
         }
         if (collision.gameObject.CompareTag("RightWall"))
         {
             ResetPosition();
             UpdateScore(2);
+            txt1.text = score1.ToString();
+        }
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            direction.y = -direction.y;
+        }
+        if (collision.gameObject.CompareTag("Player1"))
+        {
+            direction.x = -direction.x;
+        }
+        if (collision.gameObject.CompareTag("Player2"))
+        {
+            direction.x = -direction.x;
         }
     }
-
 }

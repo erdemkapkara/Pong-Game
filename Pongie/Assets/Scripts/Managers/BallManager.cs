@@ -76,10 +76,6 @@ public class BallManager : MonoBehaviour
         ResetScore();
         gameManager.ResetScore();
     }
-    void Update()
-    {
-
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

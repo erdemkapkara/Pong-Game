@@ -10,6 +10,11 @@ TagManager:
   - LeftWall
   - Ball
   - Wall
+  - Start
+  - GamePlay
+  - Win
+  - NextLevel
+  - Lost
   layers:
   - Default
   - TransparentFX

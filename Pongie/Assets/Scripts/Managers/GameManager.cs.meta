@@ -3,7 +3,24 @@ guid: 1e57e5e08de4fe5409ba6dee279f5846
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - txt1: {instanceID: 0}
+  - txt2: {instanceID: 0}
+  - txt3: {instanceID: 0}
+  - gameSettings: {fileID: 11400000, guid: fbf09dde2d85b584fbb90cbeef94277f, type: 2}
+  - ButtonClick: {instanceID: 0}
+  - ButtonPlay: {instanceID: 0}
+  - ButtonPlayAgain: {instanceID: 0}
+  - Exit: {instanceID: 0}
+  - Ballcontroller: {instanceID: 0}
+  - Ball: {fileID: 6214746218127657395, guid: 7a57a5e03e81aed4580eaf2eb1f67394, type: 3}
+  - StartUI: {instanceID: 0}
+  - GamePlayUI: {instanceID: 0}
+  - WinUI: {instanceID: 0}
+  - NextLevelUI: {instanceID: 0}
+  - LostUI: {instanceID: 0}
+  - CountDownText: {instanceID: 0}
+  - NextLevelText: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

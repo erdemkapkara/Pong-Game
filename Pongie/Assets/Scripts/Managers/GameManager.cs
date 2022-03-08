@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
             UIManager.FinishGame(1);
             LevelCount++;
             ResetScore();
-            NextLevel();
+            NextLevel(LevelCount);
         }
         else
         {
@@ -54,8 +54,16 @@ public class GameManager : MonoBehaviour
             ResetScore();
         }
     }
-    public void NextLevel()
+    public void NextLevel(int levelcount)
     {
+        if (LevelCount == 1)
+        {
+
+        }
+        else if (LevelCount == 2)
+        {
+        
+        }
 
     }
     public void ResetScore()
@@ -97,6 +105,10 @@ public class GameManager : MonoBehaviour
         if (LevelCount == 10)
         {
             UIManager.WinUI.SetActive(true);
+            UIManager.GamePlayUI.SetActive(false);
+            UIManager.Ball.SetActive(false);
+            UIManager.Players.SetActive(false);
+            
         }
     }
 }

@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public string empty = " ";
     [HideInInspector] public int score1 = 0, score2 = 0;
     [HideInInspector] public int LevelCount = 1;
+    LevelEditor leveleditor;
+    LevelEditor level1;
+    LevelEditor level2;
     private int MaxScore { get { return gameSettings.MaxScore; } }
     private static GameManager _instance;
     public static GameManager Instance
@@ -43,9 +46,10 @@ public class GameManager : MonoBehaviour
         if (score1 > score2)
         {
             UIManager.FinishGame(1);
+            NextLevel(LevelCount);
             LevelCount++;
             ResetScore();
-            NextLevel(LevelCount);
+            
         }
         else
         {
@@ -56,13 +60,31 @@ public class GameManager : MonoBehaviour
     }
     public void NextLevel(int levelcount)
     {
-        if (LevelCount == 1)
+        switch (levelcount)
         {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+            case 9:
+                break;
+            case 10:
+                break;
 
-        }
-        else if (LevelCount == 2)
-        {
-        
+            default:
+                break;
         }
 
     }
@@ -101,14 +123,6 @@ public class GameManager : MonoBehaviour
         if (score1 >= MaxScore || score2 >= MaxScore)
         {
             FinishGame(); 
-        }
-        if (LevelCount == 10)
-        {
-            UIManager.WinUI.SetActive(true);
-            UIManager.GamePlayUI.SetActive(false);
-            UIManager.Ball.SetActive(false);
-            UIManager.Players.SetActive(false);
-            
         }
     }
 }

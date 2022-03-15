@@ -9,12 +9,11 @@ public class GameManager : MonoBehaviour
     public GameSettings gameSettings;
     public BallController Ballcontroller;
     public UIManager UIManager;
+    public LevelEditor leveleditor;
     [HideInInspector] public string empty = " ";
     [HideInInspector] public int score1 = 0, score2 = 0;
     [HideInInspector] public int LevelCount = 1;
-    LevelEditor leveleditor;
-    LevelEditor level1;
-    LevelEditor level2;
+
     private int MaxScore { get { return gameSettings.MaxScore; } }
     private static GameManager _instance;
     public static GameManager Instance
@@ -48,6 +47,7 @@ public class GameManager : MonoBehaviour
             UIManager.FinishGame(1);
             NextLevel(LevelCount);
             LevelCount++;
+            Ballcontroller.NextLevel(LevelCount);
             ResetScore();
             
         }
@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
             ResetScore();
         }
     }
+ 
     public void NextLevel(int levelcount)
     {
         switch (levelcount)
@@ -66,7 +67,7 @@ public class GameManager : MonoBehaviour
                 break;
             case 2:
                 break;
-            case 3:
+            case 3:  
                 break;
             case 4:
                 break;
@@ -82,7 +83,6 @@ public class GameManager : MonoBehaviour
                 break;
             case 10:
                 break;
-
             default:
                 break;
         }

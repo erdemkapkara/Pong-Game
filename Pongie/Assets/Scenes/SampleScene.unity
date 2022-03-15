@@ -3256,6 +3256,7 @@ MonoBehaviour:
   gameSettings: {fileID: 11400000, guid: fbf09dde2d85b584fbb90cbeef94277f, type: 2}
   Ballcontroller: {fileID: 221791671}
   UIManager: {fileID: 462942279}
+  leveleditor: {fileID: 11400000, guid: d8aad3320ca2f1546b135254e94b2450, type: 2}
   empty: ' '
   score1: 0
   score2: 0
@@ -3417,9 +3418,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3858500592986634946, guid: 671db9e0982b1c84593b92badc8471d7, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3858500594128785715, guid: 671db9e0982b1c84593b92badc8471d7, type: 3}
       propertyPath: m_Mass
       value: 1.0314326
+      objectReference: {fileID: 0}
+    - target: {fileID: 3858500594128785719, guid: 671db9e0982b1c84593b92badc8471d7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3858500594476167076, guid: 671db9e0982b1c84593b92badc8471d7, type: 3}
       propertyPath: m_Name

@@ -526,6 +526,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc58cb6656cef244933b932a779cbee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &221791676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221791670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 686b3ecfdc686eb439fbf70f12cef56f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &229251136
 GameObject:
   m_ObjectHideFlags: 0
@@ -3428,7 +3440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3858500594128785719, guid: 671db9e0982b1c84593b92badc8471d7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -59.17
       objectReference: {fileID: 0}
     - target: {fileID: 3858500594476167076, guid: 671db9e0982b1c84593b92badc8471d7, type: 3}
       propertyPath: m_Name
@@ -3649,6 +3661,46 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.7735849
       objectReference: {fileID: 0}
+    - target: {fileID: 6214746218127657406, guid: 7a57a5e03e81aed4580eaf2eb1f67394, type: 3}
+      propertyPath: Level1
+      value: 
+      objectReference: {fileID: 11400000, guid: 25636d261d795bb45b2f58edd0f876e5, type: 2}
+    - target: {fileID: 6214746218127657406, guid: 7a57a5e03e81aed4580eaf2eb1f67394, type: 3}
+      propertyPath: Level2
+      value: 
+      objectReference: {fileID: 11400000, guid: a1fe87697749845468273da2e4aa635b, type: 2}
+    - target: {fileID: 6214746218127657406, guid: 7a57a5e03e81aed4580eaf2eb1f67394, type: 3}
+      propertyPath: Level3
+      value: 
+      objectReference: {fileID: 11400000, guid: c4afa167f013b53418fbf0d7d36f28a1, type: 2}
+    - target: {fileID: 6214746218127657406, guid: 7a57a5e03e81aed4580eaf2eb1f67394, type: 3}
+      propertyPath: Level4
+      value: 
+      objectReference: {fileID: 11400000, guid: b73aa3dfce0399c499467e45d6ca9d29, type: 2}
+    - target: {fileID: 6214746218127657406, guid: 7a57a5e03e81aed4580eaf2eb1f67394, type: 3}
+      propertyPath: Level5
+      value: 
+      objectReference: {fileID: 11400000, guid: 96cf2218e2e73ef48814d8bfe3a6deaa, type: 2}
+    - target: {fileID: 6214746218127657406, guid: 7a57a5e03e81aed4580eaf2eb1f67394, type: 3}
+      propertyPath: Level6
+      value: 
+      objectReference: {fileID: 11400000, guid: ea2488607e3b2ab4b830ef179d5ddc80, type: 2}
+    - target: {fileID: 6214746218127657406, guid: 7a57a5e03e81aed4580eaf2eb1f67394, type: 3}
+      propertyPath: Level7
+      value: 
+      objectReference: {fileID: 11400000, guid: 8dcdeec10a945a74cb731dd8e9658726, type: 2}
+    - target: {fileID: 6214746218127657406, guid: 7a57a5e03e81aed4580eaf2eb1f67394, type: 3}
+      propertyPath: Level8
+      value: 
+      objectReference: {fileID: 11400000, guid: 714dbdf73bef810419b2cf3cf98ac30c, type: 2}
+    - target: {fileID: 6214746218127657406, guid: 7a57a5e03e81aed4580eaf2eb1f67394, type: 3}
+      propertyPath: Level9
+      value: 
+      objectReference: {fileID: 11400000, guid: 9abad1f42624d3c4fba0154fcb541fea, type: 2}
+    - target: {fileID: 6214746218127657406, guid: 7a57a5e03e81aed4580eaf2eb1f67394, type: 3}
+      propertyPath: Level10
+      value: 
+      objectReference: {fileID: 11400000, guid: b4f424ffd2c9a264f9e695f1d53dd5bd, type: 2}
     - target: {fileID: 6214746218127657406, guid: 7a57a5e03e81aed4580eaf2eb1f67394, type: 3}
       propertyPath: LevelEdit
       value: 

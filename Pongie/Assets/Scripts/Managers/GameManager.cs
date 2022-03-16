@@ -108,10 +108,6 @@ public class GameManager : MonoBehaviour
             UIManager.txt2.text = score1.ToString();
         }
     }
-    public void PlayGame()
-    {
-
-    }
 
     void Start()
     {

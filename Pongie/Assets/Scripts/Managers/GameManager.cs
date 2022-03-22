@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public string empty = " ";
     [HideInInspector] public int score1 = 0, score2 = 0;
     [HideInInspector] public int LevelCount = 1;
-
+    //[SerializeField] LevelEditor Level1, Level2, Level3, Level4, Level5, Level6, Level7, Level8, Level9, Level10;
     private int MaxScore { get { return gameSettings.MaxScore; } }
     private static GameManager _instance;
     public static GameManager Instance
@@ -45,7 +45,6 @@ public class GameManager : MonoBehaviour
         if (score1 > score2)
         {
             UIManager.FinishGame(1);
-            NextLevel(LevelCount);
             LevelCount++;
             Ballcontroller.NextLevel(LevelCount);
             ResetScore();
@@ -59,35 +58,6 @@ public class GameManager : MonoBehaviour
         }
     }
  
-    public void NextLevel(int levelcount)
-    {
-        switch (levelcount)
-        {
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:  
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-            case 6:
-                break;
-            case 7:
-                break;
-            case 8:
-                break;
-            case 9:
-                break;
-            case 10:
-                break;
-            default:
-                break;
-        }
-
-    }
     public void ResetScore()
     {
         score1 = 0;
@@ -111,7 +81,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
     }
 
     void Update()

@@ -136,4 +136,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBall: {fileID: 6214746218127657394}
   gameSettings: {fileID: 11400000, guid: fbf09dde2d85b584fbb90cbeef94277f, type: 2}
-  LevelEdit: {fileID: 0}
+  LevelEdit: {fileID: 11400000, guid: d8aad3320ca2f1546b135254e94b2450, type: 2}
